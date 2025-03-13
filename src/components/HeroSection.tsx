@@ -31,12 +31,12 @@ const HeroSection = () => {
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button asChild size="lg" className="bg-white text-nayvoh-700 hover:bg-gray-100">
                   <Link to="/services">
-                    <span>Explore Services</span>
+                    Explore Services
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
                   <Link to="/contact">
-                    <span>Contact Us</span>
+                    Contact Us
                   </Link>
                 </Button>
               </div>

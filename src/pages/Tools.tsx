@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -70,7 +71,7 @@ const Tools = () => {
                 <div className="flex flex-wrap justify-center gap-4">
                   <Button asChild size="lg" className="bg-nayvoh-600 hover:bg-nayvoh-700 text-white">
                     <Link to="/contact">
-                      <span>Get in Touch</span>
+                      Get in Touch
                     </Link>
                   </Button>
                 </div>

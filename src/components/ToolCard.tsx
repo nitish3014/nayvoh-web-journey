@@ -14,14 +14,14 @@ const ToolCard = ({ name, description, category, icon, iconType = "image" }: Too
   // Map of tool names to Lucide icons
   const getIconComponent = (toolName: string) => {
     const iconMap: Record<string, React.ReactNode> = {
-      "Kubernetes": <Cloud className="w-10 h-10 text-blue-500" />,
-      "Terraform": <Wrench className="w-10 h-10 text-purple-600" />,
-      "Docker": <Database className="w-10 h-10 text-blue-600" />,
-      "Jenkins": <Cog className="w-10 h-10 text-red-600" />,
-      "Prometheus": <Sliders className="w-10 h-10 text-orange-500" />,
-      "Grafana": <MonitorSmartphone className="w-10 h-10 text-orange-600" />,
-      "AWS": <Cloud className="w-10 h-10 text-orange-600" />,
-      "GitHub Actions": <Code className="w-10 h-10 text-gray-800" />,
+      "Kubernetes": <img src="/images/tools/kubernetes.svg" alt="Kubernetes" className="w-10 h-10" />,
+      "Terraform": <img src="/images/tools/terraform.svg" alt="Terraform" className="w-10 h-10" />,
+      "Docker": <img src="/images/tools/docker.svg" alt="Docker" className="w-10 h-10" />,
+      "Jenkins": <img src="/images/tools/jenkins.svg" alt="Jenkins" className="w-10 h-10" />,
+      "Prometheus": <img src="/images/tools/prometheus.svg" alt="Prometheus" className="w-10 h-10" />,
+      "Grafana": <img src="/images/tools/grafana.svg" alt="Grafana" className="w-10 h-10" />,
+      "AWS": <img src="/images/tools/aws.svg" alt="AWS" className="w-10 h-10" />,
+      "GitHub Actions": <img src="/images/tools/github.svg" alt="GitHub Actions" className="w-10 h-10" />,
       // Default fallback
       "default": <Server className="w-10 h-10 text-gray-600" />
     };
