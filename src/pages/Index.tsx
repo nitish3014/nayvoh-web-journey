@@ -4,11 +4,20 @@ import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { services } from "@/constants/services";
+import { tools } from "@/constants/tools";
 import ServiceCard from "@/components/ServiceCard";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import ToolCard from "@/components/ToolCard";
 
 const Index = () => {
   return (
@@ -61,8 +70,54 @@ const Index = () => {
           </div>
         </section>
         
-        {/* Why Choose Us Section */}
+        {/* Tools Section */}
         <section className="py-16 md:py-24 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <RevealOnScroll>
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">DevOps Tools</h2>
+                <p className="text-lg text-gray-600">
+                  Explore the industry-leading tools and technologies we utilize to power your digital transformation.
+                </p>
+              </div>
+            </RevealOnScroll>
+            
+            <RevealOnScroll delay={100}>
+              <div className="px-8 md:px-16 lg:px-24">
+                <Carousel className="w-full" opts={{ loop: true }}>
+                  <CarouselContent>
+                    {tools.map((tool) => (
+                      <CarouselItem key={tool.id} className="md:basis-1/2 lg:basis-1/3">
+                        <ToolCard
+                          name={tool.name}
+                          description={tool.description}
+                          category={tool.category}
+                          icon={tool.icon}
+                        />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <div className="flex justify-center mt-8">
+                    <CarouselPrevious className="relative static left-0 right-auto mr-4" />
+                    <CarouselNext className="relative static right-0 left-auto" />
+                  </div>
+                </Carousel>
+                
+                <div className="flex justify-center mt-12">
+                  <Button asChild variant="outline" className="group">
+                    <Link to="/tools" className="flex items-center">
+                      View All Tools
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </section>
+        
+        {/* Why Choose Us Section */}
+        <section className="py-16 md:py-24 bg-gray-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col lg:flex-row items-center gap-12">
               <div className="lg:w-1/2">
