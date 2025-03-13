@@ -83,30 +83,38 @@ const Index = () => {
             </RevealOnScroll>
             
             <RevealOnScroll delay={100}>
-              <div className="px-8 md:px-16 lg:px-24">
-                <Carousel className="w-full" opts={{ loop: true }}>
-                  <CarouselContent>
+              <div className="px-4 md:px-12 lg:px-20">
+                <Carousel className="w-full" opts={{ 
+                  loop: true,
+                  align: "start",
+                  skipSnaps: false,
+                  dragFree: true,
+                }}>
+                  <CarouselContent className="-ml-2 md:-ml-4">
                     {tools.map((tool) => (
-                      <CarouselItem key={tool.id} className="md:basis-1/2 lg:basis-1/3">
-                        <ToolCard
-                          name={tool.name}
-                          description={tool.description}
-                          category={tool.category}
-                          icon={tool.icon}
-                        />
+                      <CarouselItem key={tool.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                        <div className="p-1">
+                          <ToolCard
+                            name={tool.name}
+                            description={tool.description}
+                            category={tool.category}
+                            icon={tool.icon}
+                            iconType="lucide"
+                          />
+                        </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <div className="flex justify-center mt-8">
-                    <CarouselPrevious className="relative static left-0 right-auto mr-4" />
-                    <CarouselNext className="relative static right-0 left-auto" />
+                  <div className="flex justify-center mt-8 gap-4">
+                    <CarouselPrevious className="relative static left-auto right-auto mr-2" />
+                    <CarouselNext className="relative static right-auto left-auto" />
                   </div>
                 </Carousel>
                 
                 <div className="flex justify-center mt-12">
                   <Button asChild variant="outline" className="group">
                     <Link to="/tools" className="flex items-center">
-                      View All Tools
+                      <span>View All Tools</span>
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
@@ -197,10 +205,14 @@ const Index = () => {
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Button asChild size="lg" className="bg-white text-nayvoh-700 hover:bg-gray-100">
-                    <Link to="/contact">Contact Us</Link>
+                    <Link to="/contact">
+                      <span>Contact Us</span>
+                    </Link>
                   </Button>
                   <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                    <Link to="/services">Explore Services</Link>
+                    <Link to="/services">
+                      <span>Explore Services</span>
+                    </Link>
                   </Button>
                 </div>
               </RevealOnScroll>

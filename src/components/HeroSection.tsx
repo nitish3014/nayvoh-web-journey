@@ -30,10 +30,14 @@ const HeroSection = () => {
             <RevealOnScroll delay={400}>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button asChild size="lg" className="bg-white text-nayvoh-700 hover:bg-gray-100">
-                  <Link to="/services">Explore Services</Link>
+                  <Link to="/services">
+                    <span>Explore Services</span>
+                  </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                  <Link to="/contact">Contact Us</Link>
+                  <Link to="/contact">
+                    <span>Contact Us</span>
+                  </Link>
                 </Button>
               </div>
             </RevealOnScroll>
